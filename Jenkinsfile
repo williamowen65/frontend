@@ -1,7 +1,9 @@
 node {
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
+       sh 'npm run installDev'      //  sh 'npm run installLegacy'
        sh 'npm run install'      //  sh 'npm run installLegacy'
+       sh 'npm run installLegacy'      //  sh 'npm run installLegacy'
        sh 'npm test'
      }
    }
